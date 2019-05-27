@@ -589,6 +589,9 @@ Bipertite graph:
 ```
 Code:  Uva10004 – Bicoloring.cpp
 ---
+```
+	Solved using DFS. Can be solved by using BFS also.
+```
 Resources:
 ---
 ```
