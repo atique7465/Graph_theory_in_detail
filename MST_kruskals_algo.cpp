@@ -50,9 +50,10 @@ void union_by_size(ll u,ll v)
 
 ll MST_kruskal(ll n)
 {
-    for(i=0; i<=n; i++) ///initialize paarent.
+    for(i=0; i<=n; i++) ///initialize paarent and size.
     {
         parent[i]=i;
+        sz[i]=1;
     }
     ll min_cost=0;
     sort(e.begin(),e.end());
