@@ -1,5 +1,5 @@
 /// this is another classical MST problem.
-/// just calculate the euclidean distance between all possible pickle pairs.
+/// just calculate the euclidean distance between all possible preckle pairs.
 /// and than kruskal or prims. i used kruskal here.  :XD
 #include<bits/stdc++.h>
 #define ll long long int
