@@ -472,6 +472,11 @@ input:
 output:
 Minimun cost is: 39
 ```
+Updating Spanning Trees:
+---
+```
+Resourse in repository: UpdatingSpanningTrees.pdf
+```
 Resources:
 ---
 ```
