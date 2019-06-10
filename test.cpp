@@ -5,12 +5,19 @@
 #define pb(x) push_back(x)
 #define mem(x,y) memset(x,y,sizeof(x))
 #define pii pair<ll,ll>
+#define pdd pair<double,double>
+#define ff first
+#define ss second
 #define mp make_pair
-#define uu.first
-#define vv.second
-#define read(f) freopen(f,"r",stdin)
-#define write(f) freopen(f,"w",stdin)
+#define read(f) freopen("in.txt","r",stdin)
+#define write(f) freopen("","w",stdin)
+#define mx 100000
+#define pi 3.1415926535897932384626433832795
 using namespace std;
+//int dx[]={1,0,-1,0};int dy[]={0,1,0,-1}; //4 Direction
+//int dx[]={1,1,0,-1,-1,-1,0,1};int dy[]={0,1,1,1,0,-1,-1,-1};//8 direction
+//int dx[]={2,1,-1,-2,-2,-1,1,2};int dy[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
+//int dx[]={2,1,-1,-2,-1,1};int dy[]={0,1,1,0,-1,-1}; //Hexagonal Direction
 ll i,j;
 int main()
 {
