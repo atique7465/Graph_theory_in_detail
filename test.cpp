@@ -9,8 +9,6 @@
 #define ff first
 #define ss second
 #define mp make_pair
-#define read(f) freopen("in.txt","r",stdin)
-#define write(f) freopen("","w",stdin)
 #define mx 100000
 #define pi 3.1415926535897932384626433832795
 using namespace std;
@@ -21,6 +19,8 @@ using namespace std;
 ll i,j;
 int main()
 {
+    //freopen("in.txt","r",stdin);
+   // freopen("out.txt","w",stdout);
     //mem(a,-1);
     ll a[10][10]={0};
     rep0(i,10)
