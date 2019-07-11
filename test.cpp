@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<fstream>
 #define ll long long int
 #define rep0(i,n) for(i=0; i<(ll)n; i++)
 #define rep1(i,n) for(i=1; i<=(ll)n; i++)
@@ -20,14 +21,9 @@ ll i,j;
 int main()
 {
     //freopen("in.txt","r",stdin);
-   // freopen("out.txt","w",stdout);
-    //mem(a,-1);
-    ll a[10][10]={0};
-    rep0(i,10)
-    {
-        rep0(j,10){
-          printf("%lld ",a[i][i]);}
-          printf("\n");
-    }
+    //freopen("out.txt","w",stdout);
+    //ifstream fin("in.txt");
+    //ofstream fout("out.txt");
+
     return 0;
 }
