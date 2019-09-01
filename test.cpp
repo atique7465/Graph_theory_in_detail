@@ -18,12 +18,29 @@ using namespace std;
 //int dx[]={2,1,-1,-2,-2,-1,1,2};int dy[]={1,2,2,1,-1,-2,-2,-1};//Knight Direction
 //int dx[]={2,1,-1,-2,-1,1};int dy[]={0,1,1,0,-1,-1}; //Hexagonal Direction
 ll i,j;
+
+int countWords(string str) 
+{ 
+                          // breaking input into word using string stream 
+    stringstream s(str); // Used for breaking words 
+    string word;          // to store individual words 
+  
+    int count = 0; 
+    while (s >> word) 
+        count++; 
+    return count; 
+} 
+  
+
 int main()
 {
     //freopen("in.txt","r",stdin);
     //freopen("out.txt","w",stdout);
     //ifstream fin("in.txt");
     //ofstream fout("out.txt");
-
+    
+    string word;
+    getline(cin,word);
+    
     return 0;
 }
