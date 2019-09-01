@@ -41,6 +41,6 @@ int main()
     
     string word;
     getline(cin,word);
-    
+    /// getline(cin,line); /// have to ignore first enter. other wise it will consider as an input.
     return 0;
 }
