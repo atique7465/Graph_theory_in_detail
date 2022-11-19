@@ -12,18 +12,18 @@ class Solution {
 public:
     vector<vector<int>> outerTrees(vector<vector<int>> &trees) {
 
-        set<vector<int>> hull; //set to avoid duplicates
+        set<vector<int>> hull; //using set to avoid duplicates
 
-        int startingPoint = startingPint(trees);
+        int startingPoint = findStartingPoint(trees);
         hull.insert(trees[startingPoint]);
 
-        //Jarvis march
         int a = startingPoint;
-        do {
+        while (true) {
             //choose candidate b
             int b = (a + 1) % trees.size(); //to ensure we started with a point other than point_a
 
             //get the rightMost point of point_a
+            //if crossProduct == 0, if a - i - b then we can skip i other-wise a - b - i consider i as b
             //if crossProduct < 0 it means points[i] is on right of current point_a -> point_b. Make point_i the next point.
             for (int i = 0; i < trees.size(); i++) {
                 if (i == a) continue;
@@ -36,13 +36,14 @@ public:
 
             hull.insert(trees[b]);
             a = b;
-        } while (a != startingPoint);
+            if (a == startingPoint) break;
+        }
 
         return vector<vector<int>>(hull.begin(), hull.end());
     }
 
     //finds the bottom most, left most point
-    int startingPint(vector<vector<int>> &trees) {
+    int findStartingPoint(vector<vector<int>> &trees) {
         int min = 0;
         for (int i = 0; i < trees.size(); i++) {
             if (trees[i][1] <= trees[min][1]) {

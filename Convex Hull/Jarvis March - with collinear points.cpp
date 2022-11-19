@@ -14,12 +14,12 @@ public:
 
         set<vector<int>> hull; //set to avoid duplicates
 
-        int leftMost = findLeftMost(trees); //find left most
+        int startingPoint = findStartingPoint(trees); //find left most
+        hull.insert(trees[startingPoint]);
 
         //Jarvis march
-        int a = leftMost;
-        bool leftMostCollinear = false;
-        do {
+        int a = startingPoint;
+        while (true) {
             //choose candidate b
             int b = (a + 1) % trees.size(); //to ensure we started with a point other than point_a
 
@@ -34,22 +34,29 @@ public:
                 if (i != a && i != b && relativePosition(trees[a], trees[i], trees[b]) == 0 &&
                     inBetween(trees[a], trees[i], trees[b])) {
                     hull.insert(trees[i]);
-                    if (i == leftMost) leftMostCollinear = true;
                 }
-
-            if(leftMostCollinear) break;
 
             hull.insert(trees[b]);
             a = b;
-        } while (a != leftMost);
+            if (a == startingPoint) break;
+        }
 
         return vector<vector<int>>(hull.begin(), hull.end());
     }
 
-    int findLeftMost(vector<vector<int>> &trees) {
-        int leftMost = 0;
-        for (int i = 0; i < trees.size(); i++) if (trees[i][0] < trees[leftMost][0]) leftMost = i;
-        return leftMost;
+    //finds the bottom most, left most point
+    int findStartingPoint(vector<vector<int>> &trees) {
+        int min = 0;
+        for (int i = 0; i < trees.size(); i++) {
+            if (trees[i][1] <= trees[min][1]) {
+                if (trees[i][1] < trees[min][1]) {
+                    min = i;
+                } else if (trees[i][0] < trees[min][0]) {
+                    min = i;
+                }
+            }
+        }
+        return min;
     }
 
     int relativePosition(vector<int> &a, vector<int> &i, vector<int> &b) {
